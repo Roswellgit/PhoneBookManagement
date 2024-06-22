@@ -25,7 +25,7 @@ namespace PhoneBookBusinessService
             return rs;
         }
 
-        public bool CreateEntry(string name, int num, string email, string add)
+        public bool CreateEntry(string name, string num, string email, string add)
         {
             Contacts c = new Contacts { c_name = name, c_num = num, c_email = email, c_add = add};
 
@@ -43,7 +43,7 @@ namespace PhoneBookBusinessService
             return rs;
         }
 
-        public bool UpdateEntry(string name, int num, string email, string add)
+        public bool UpdateEntry(string name, string num, string email, string add)
         {
             Contacts c = new Contacts { c_name = name, c_num = num, c_email = email, c_add = add };
 

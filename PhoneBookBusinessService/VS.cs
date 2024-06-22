@@ -14,12 +14,12 @@ namespace PhoneBookBusinessService
 
         public bool VibeCheck(string c_name)
         {
-            bool result = s.GetUser(c_name) != null;
+            bool result = s.GetName(c_name) != null;
             return result;
         }
-        public bool VibeCheck(int c_num)    
+        public bool VibeDeck(string c_num)    
         {
-            bool result = s.GetUser(c_num) != null;
+            bool result = s.GetNum(c_num) != null;
             return result;
         }
     }

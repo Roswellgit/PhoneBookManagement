@@ -6,12 +6,12 @@ namespace PhoneBookData
     {
 
         List<Contacts> contacts;
-        SqlDbData sqlData;
+        SqlDb sqlData;
 
-        public PhoneBookData()
+        public Functions()
         {
             contacts = new List<Contacts>();
-            sqlData = new SqlDbData();
+            sqlData = new SqlDb();
         }
 
         public List<Contacts> GetUsers()
@@ -22,15 +22,15 @@ namespace PhoneBookData
 
         public int AddContact(Contacts contact)
         {
-            return sqlData.AddUser(contact.c_name, contact.c_num, contact.c_email, contact.c_add);
+            return sqlData.AddContact(contact.c_name, contact.c_num, contact.c_email, contact.c_add);
         }
         public int UpdateContact(Contacts contact)
         {
-            return sqlData.Update(contact.c_name, contact.c_num, contact.c_email, contact.c_add);
+            return sqlData.UpdateContact(contact.c_name, contact.c_num, contact.c_email, contact.c_add);
         }
         public int DeleteContact(Contacts contact)
         {
-            return sqlData.DeleteUser(contact.c_num);
+            return sqlData.DeleteContact(contact.c_name);
         }
 
 

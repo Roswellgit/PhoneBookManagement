@@ -11,7 +11,7 @@ namespace PhoneBookBusinessService
             return functions.GetUsers();
         }
 
-        public Contacts GetUser(string c_name)
+        public Contacts GetName(string c_name)
         {
             Contacts fc = new Contacts();
 
@@ -25,7 +25,7 @@ namespace PhoneBookBusinessService
             return fc;
         }
 
-        public Contacts GetUser(int c_num)
+        public Contacts GetNum(string c_num)
         {
             Contacts fc = new Contacts();
 
