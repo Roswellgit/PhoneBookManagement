@@ -11,7 +11,7 @@ namespace PhoneBookData
 {
     public class SqlDb
     {
-        string connection = "Data Source =DESKTOP-ORNPSN0\\SQLEXPRESS; Initial Catalog = PhoneBookManagement; Integrated Security = True;";
+        string connection = "Data Source =ROSWELL\\SQLEXPRESS01; Initial Catalog = PhoneBookManagement; Integrated Security = True;";
 
         SqlConnection sqlConnection;
 
@@ -33,7 +33,7 @@ namespace PhoneBookData
             while (re.Read())
             {
                 string name = re["Name"].ToString();
-                string num = re["Number"].ToString();
+                string num = re["Num"].ToString();
                 string em = re["Email"].ToString();
                 string add = re["Address"].ToString();
 
