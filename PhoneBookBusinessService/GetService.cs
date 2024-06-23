@@ -5,7 +5,7 @@ namespace PhoneBookBusinessService
 {
     public class GetService
     {
-        private List<Contacts> GetAllUsers()
+        public List<Contacts> GetAllUsers()
         {
             Functions functions = new Functions();
             return functions.GetUsers();

@@ -9,12 +9,14 @@ namespace Client
         {
             GetService gs = new GetService();
 
-            var users = gs.GetNum();
+            var contacts = gs.GetAllUsers();
 
-            foreach (var item in users)
+            foreach (var item in contacts)
             {
-                Console.WriteLine(item.username);
-                Console.WriteLine(item.password);
+                Console.WriteLine(item.c_name);
+                Console.WriteLine(item.c_num);
+                Console.WriteLine(item.c_email);
+                Console.WriteLine(item.c_add);
             }
 
         }
