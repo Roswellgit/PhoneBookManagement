@@ -75,11 +75,11 @@ namespace PhoneBookData
         {
             int success;
 
-            string UPDATE = $"UPDATE pbook SET Number = @Number, Email = @Email, Address = @Address WHERE Name = @Name";
+            string UPDATE = $"UPDATE pbook SET Num = @Num, Email = @Email, Address = @Address WHERE Name = @Name";
 
             SqlCommand upcom = new SqlCommand(UPDATE, sqlConnection);
 
-            upcom.Parameters.AddWithValue("@Number", num);
+            upcom.Parameters.AddWithValue("@Num", num);
             upcom.Parameters.AddWithValue("@Email",email);
             upcom.Parameters.AddWithValue("@Address", add);
             upcom.Parameters.AddWithValue("@Name", name);

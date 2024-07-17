@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PhoneBookBusinessService;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using PhoneBookModels;
 
 namespace PhoneBookAPI.Controllers
 {
@@ -44,5 +45,17 @@ namespace PhoneBookAPI.Controllers
 
             return new JsonResult(result);
         }
+        [HttpDelete]
+        public JsonResult DeleteContact(Contacts request)
+        {
+            var del = new PhoneBookModels.Contacts
+            {
+                   c_name = request.Name
+            };
+            var result = _cup.DeleteEntry(del);
+
+            return new JsonResult(result);
+        }
+
     }
 }

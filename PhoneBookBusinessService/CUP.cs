@@ -38,7 +38,7 @@ namespace PhoneBookBusinessService
 
             if (val.VibeCheck(contacts.c_name))
             {
-                rs = f.AddContact(contacts) > 0;
+                rs = f.UpdateContact(contacts) > 0;
             }
             return rs;
         }
@@ -56,11 +56,11 @@ namespace PhoneBookBusinessService
 
             if (val.VibeCheck(contacts.c_name))
             {
-                rs = f.AddContact(contacts) > 0;
+                rs = f.DeleteContact(contacts) > 0;
             }
             return rs;
         }
 
-      
+       
     }
 }
