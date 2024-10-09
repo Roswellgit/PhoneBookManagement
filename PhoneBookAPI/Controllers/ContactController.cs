@@ -12,12 +12,17 @@ namespace PhoneBookAPI.Controllers
         GetService _getservice;
         CUP _cup;
         Email _email;
+        Email2 _email2;
+        Email3 _email3;
 
         public ContactController()
         {
             _getservice = new GetService();
             _cup = new CUP();
             _email = new Email();
+            _email2 = new Email2();
+            _email3 = new Email3();
+            
         }
 
         [HttpGet]
@@ -36,15 +41,24 @@ namespace PhoneBookAPI.Controllers
         [HttpPost]
         public JsonResult AddContact(Contacts request)
         {
-            var result = _cup.CreateEntry(request.Name, request.Num, request.Email, request.Address);
-            var email = _email; 
+            var resultt = _cup.CreateEntry(request.Name, request.Num, request.Email, request.Address);
+            if (resultt)
+            {
+                var email = _email;
+            }
 
-            return new JsonResult(result);
+            return new JsonResult(resultt);
         }
         [HttpPatch]
         public JsonResult UpdateContact(Contacts request)
         {
             var result = _cup.UpdateEntry(request.Name, request.Num, request.Email, request.Address);
+            if (result)
+            {
+                var email2 = _email2;
+            }
+            
+            
 
             return new JsonResult(result);
         }
@@ -55,9 +69,13 @@ namespace PhoneBookAPI.Controllers
             {
                    c_name = request.Name
             };
-            var result = _cup.DeleteEntry(del);
+            var resulttt = _cup.DeleteEntry(del);
+            if (resulttt)
+            {
+                var email3 = _email3;
+            }
 
-            return new JsonResult(result);
+            return new JsonResult(resulttt);
         }
 
     }
