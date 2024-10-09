@@ -11,8 +11,8 @@ namespace PhoneBookData
 {
     public class SqlDb
     {
-        //string connection = "Data Source =ROSWELL\\SQLEXPRESS01; Initial Catalog = PhoneBookManagement; Integrated Security = True;";
-        string connection = "Server =tcp:20.205.28.95,1433; Database = PhoneBookManagement; User Id=sa; Password=Red123456789!;";
+        string connection = "Data Source =ROSWELL\\SQLEXPRESS01; Initial Catalog = PhoneBookManagement; Integrated Security = True;";
+        //string connection = "Server =tcp:20.205.28.95,1433; Database = PhoneBookManagement; User Id=sa; Password=Red123456789!;";
 
         SqlConnection sqlConnection;
 

@@ -11,11 +11,13 @@ namespace PhoneBookAPI.Controllers
     {
         GetService _getservice;
         CUP _cup;
+        Email _email;
 
         public ContactController()
         {
             _getservice = new GetService();
             _cup = new CUP();
+            _email = new Email();
         }
 
         [HttpGet]
@@ -35,6 +37,7 @@ namespace PhoneBookAPI.Controllers
         public JsonResult AddContact(Contacts request)
         {
             var result = _cup.CreateEntry(request.Name, request.Num, request.Email, request.Address);
+            var email = _email; 
 
             return new JsonResult(result);
         }
