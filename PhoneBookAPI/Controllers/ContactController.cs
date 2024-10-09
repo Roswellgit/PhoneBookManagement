@@ -12,16 +12,14 @@ namespace PhoneBookAPI.Controllers
         GetService _getservice;
         CUP _cup;
         Email _email;
-        Email2 _email2;
-        Email3 _email3;
+
 
         public ContactController()
         {
             _getservice = new GetService();
             _cup = new CUP();
             _email = new Email();
-            _email2 = new Email2();
-            _email3 = new Email3();
+
             
         }
 
@@ -44,7 +42,8 @@ namespace PhoneBookAPI.Controllers
             var resultt = _cup.CreateEntry(request.Name, request.Num, request.Email, request.Address);
             if (resultt)
             {
-                var email = _email;
+                _email.AddEmail(request.Name);
+                
             }
 
             return new JsonResult(resultt);
@@ -55,7 +54,7 @@ namespace PhoneBookAPI.Controllers
             var result = _cup.UpdateEntry(request.Name, request.Num, request.Email, request.Address);
             if (result)
             {
-                var email2 = _email2;
+                _email.UpdateEmail(request.Name);
             }
             
             
@@ -72,7 +71,7 @@ namespace PhoneBookAPI.Controllers
             var resulttt = _cup.DeleteEntry(del);
             if (resulttt)
             {
-                var email3 = _email3;
+                _email.DeleteEmail(request.Name);
             }
 
             return new JsonResult(resulttt);
